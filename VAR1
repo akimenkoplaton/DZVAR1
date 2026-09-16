@@ -1,0 +1,22 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <windows.h>
+
+int main(void)
+{
+    SetConsoleCP(65001);
+    SetConsoleOutputCP(65001);
+    float M = 3.0e-23f;
+    float G = 950;
+    float Q;
+    printf("Введите количество воды в квартах: ");
+    if (scanf("%f", &Q) != 1) {
+        printf("Ошибка ввода.\n");
+        return 1;
+    }
+
+    float G2 = Q * G;
+    float M2 = G2 / M;
+    printf("Количество молекул воды в %.2f квартах: %.6e\n", Q, M2);
+    return 0;
+}
